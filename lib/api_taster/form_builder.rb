@@ -1,6 +1,7 @@
 module ApiTaster
   class FormBuilder < AbstractController::Base
     include AbstractController::Rendering
+    include ActionView::Rendering # if Rails.version > '4.1'
     include ActionView::Context
     include ActionView::Helpers::CaptureHelper
 
