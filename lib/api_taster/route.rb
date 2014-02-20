@@ -30,6 +30,7 @@ module ApiTaster
         @_route_counter = 0
         self.routes = []
 
+        Rails.application.reload_routes!
         unless route_set.respond_to?(:routes)
           raise ApiTaster::Exception.new('Route definitions are missing, have you defined ApiTaster.routes?')
         end
